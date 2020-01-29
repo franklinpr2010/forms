@@ -107,7 +107,7 @@ WSGI_APPLICATION = 'django2.wsgi.application'
 
 #Usando postgreSQL com heroku - vai pegar a configuração padrão do heroku
 DATABASES = {
-    'default' : dj_database_url.config()
+    'default':dj_database_url.config()
 }
 
 
