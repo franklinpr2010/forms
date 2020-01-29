@@ -1,0 +1,27 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <div class="container">
+        <h1>Contato</h1>
+        {% bootstrap_messages %}
+        <!--Enviar para url de contato para a  view, pega os dados que foram digitados e envia para essa url-->
+        <form action="{% url 'contato' %}" method="post" class="form" autocomplete="off">
+            <!--vai gerar um token do formulário, valida dos dados que estão sendo passados -->
+            {% csrf_token %}
+            <!--Aplica o css nesse form-->
+            {% bootstrap_form form %}
+             <!--Criação de um botão-->
+            {% buttons %}
+                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+            {% endbuttons %}
+        </form>
+    </div>
+{% bootstrap_javascript jquery='full' %}
+</body>
+</html>
