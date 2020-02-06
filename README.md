@@ -51,7 +51,7 @@ urlpatterns = [
 ]
 
 
-**Criar o superusuário  
+**Criar o superusuário**  
 
 python manage.py createsuperuser
 
