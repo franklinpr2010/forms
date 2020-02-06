@@ -1,33 +1,33 @@
 # forms
 Trabalhando com forms  
 
-Nesse projeto se trabalhará com mysql, e-mails e forms no django.
+**Nesse projeto se trabalhará com mysql, e-mails e forms no django.**  
 
-Fazer a instalação do django, gunicorn, bootstrap e whitenoise, PyMySql (Drive do mysql), django-std-image( Facilita trabalhar com imagens no projeto ) :  
+**Fazer a instalação do django, gunicorn, bootstrap e whitenoise, PyMySql (Drive do mysql), django-std-image( Facilita trabalhar com imagens no projeto ) :**    
 
 pip install django whitenoise gunicorn django-bootstrap PyMySql django-std-image  
 
 pip freeze > requirements.txt  
 
-Criando um projeto:  
+**Criando um projeto:**  
 
 django-admin startproject django2 .
 
-Criando a aplicação:  
+**Criando a aplicação:**    
 
 django-admin startapp core
 
-Definindo e configurando as views emn views.py
+**Definindo e configurando as views emn views.py**  
 
-Enviar emails, criar templates e View para um formulário que salva dados no banco.
+**Enviar emails, criar templates e View para um formulário que salva dados no banco.**  
 
 Configurando as rotas da aplicação em urls.py  
 
-from django.contrib import admin
-from django.urls import path, include
-from django.conf import settings
+from django.contrib import admin  
+from django.urls import path, include  
+from django.conf import settings  
 
-from django.conf.urls.static import static
+from django.conf.urls.static import static  
 
 urlpatterns = [  
     path('admin/', admin.site.urls),  
