@@ -10,7 +10,7 @@
     <div class="container">
         <h1>Produto</h1>
         {% bootstrap_messages %}
-
+        <!--Quando faz upload de arquivos coloca o enctype="multipart/form-data"-->
         <form action="{% url 'produto' %}" method="post" class="form" autocomplete="off" enctype="multipart/form-data">
             {% csrf_token %}
 

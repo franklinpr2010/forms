@@ -9,7 +9,7 @@ from .models import Produto
 
 #retorna a renderização do request
 def index(request):
-    print(f'Usuário: {request.user}')
+    #print(f'Usuário: {request.user}')
     context = {
         #buscando todos os produtos cadastrados
         'produtos':Produto.objects.all()
@@ -34,7 +34,7 @@ def contato(request):
     context = {
         'form': form
     }
-    #envia para o contexto do template
+    #envia para o contexto do template o form
     return render(request, 'contato.html', context)
 
 
@@ -43,9 +43,11 @@ def produto(request):
     if str(request.user) != 'AnonymousUser':
         # se um usuário enviou um form vai ser um request.post e request.FILES por causa da imagem
         if str(request.method) == 'POST':
+            #vai vir o arquivo no files
             form = ProdutoModelForm(request.POST, request.FILES)
             # verificar se produto é valido
             if form.is_valid():
+                #Salva os dados, mas antes chama o pre_save lá no models
                 prod = form.save()
                 print(f'Nome: {prod.nome}')
                 print(f'Preço: {prod.preco}')
@@ -56,6 +58,7 @@ def produto(request):
                 form = ProdutoModelForm()
             else:
                 messages.error(request, 'Erro ao salvar produto.')
+        #apenas carrega o formulário
         else:
             form = ProdutoModelForm()
         context = {

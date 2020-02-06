@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #qualquer rota que não tenha envia para outra aplicação
+    #qualquer rota que não tenha envia para outra aplicação, no caso core.urls
     path('', include('core.core_urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

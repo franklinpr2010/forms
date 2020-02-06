@@ -9,6 +9,7 @@
     <title>Index</title>
     <!--CArregando o css-->
     {% bootstrap_css %}
+    <!--Static declarado no settings.py-->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 <body>
@@ -33,6 +34,7 @@
                         <td scope="row">{{ produto.preco }}</td>
                         <td scope="row">{{ produto.estoque }}</td>
                     </tr>
+                <!--modal do bootstrap -->
                     <div class="modal fade bd-example-modal-lg show" id="modal{{produto.id}}" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">

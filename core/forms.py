@@ -1,8 +1,11 @@
+#é nesse arquivo form que cria todos os formulários
+
 from django import forms
+#definindo que esse formulário enviará email
 from django.core.mail.message import EmailMessage
 from .models import Produto
 
-
+#herdando de form
 class ContatoForm(forms.Form):
     nome = forms.CharField(label = 'Nome', max_length=100)
     email = forms.EmailField(label='Email', max_length=100)
@@ -25,10 +28,11 @@ class ContatoForm(forms.Form):
             to=['contato@seudominio.com.br', ],
             headers={'Reply-To': email}
         )
+        #Dispara o e-mail
         mail.send()
 
 
-#Definição da classe de modelo
+#Definição da classe de modelo, esta herdando de model form
 class ProdutoModelForm(forms.ModelForm):
     class Meta:
         #ao invés de fazer como acima ele vai pegar os dados e metadados diretamente do modelo de produto
